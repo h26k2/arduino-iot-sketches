@@ -1,10 +1,10 @@
 
-/*
+/************************************************
  * Three Pin Push Button
  * pin S is for sense
  * pin - is for ground
- * the remaing pin needs +5V to work
- */
+ * the remaing pin needs (+5V  || +3.3V)to work
+ ***********************************************/
 
 int sensePin = 12;
 int lightPin = 13;
