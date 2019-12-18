@@ -15,28 +15,13 @@ void setup() {
 
   pinMode(lightPin , OUTPUT);
   pinMode(sensePin, INPUT);
+  Serial.begin(9600);
   
 }
 
 void loop() {
 
   btnCurrentState = digitalRead(sensePin);
-  
-  //This condition ensure that the button is pressed up 
-  if(btnPreviousState == LOW && btnCurrentState == HIGH){
-
-    //Now toggling the led state (on || off)
-
-    if(lightState == LOW){
-      lightState = HIGH;
-    }
-    else{
-      lightState = LOW;
-    }
-    
-  }
-
-  digitalWrite(lightPin,lightState);
-  btnPreviousState = btnCurrentState;
+  Serial.println(btnCurrentState);
   
 }
