@@ -21,16 +21,16 @@ void setup() {
   }
 
   pinMode(sensePin , INPUT);
-  
+  Serial.begin(9600);
 }
 
 void loop() {
 
   btnCurrentState = digitalRead(sensePin);
   digitalWrite(segCommon, HIGH);
-
+  Serial.println(btnCurrentState);  
   if(btnPreviousState == LOW && btnCurrentState == HIGH){
-
+      Serial.println(numToDisplay);
     if(numToDisplay == 0){
       
       for(int i=segA ; i<=segG ; i++){
