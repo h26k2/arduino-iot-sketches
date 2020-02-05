@@ -7,13 +7,13 @@ void setup() {
 
   pinMode(sensePin , INPUT);
   pinMode(relayPin , OUTPUT);
-  
+  Serial.begin(9600);
 }
 
 void loop() {
 
   int level = analogRead(sensePin);
-
+  Serial.println(level);
   if(level >= 500 && state == LOW){
     Serial.println("TURNING LIGHTS ON");
     state = HIGH;
